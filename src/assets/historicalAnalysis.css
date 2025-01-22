@@ -1,0 +1,224 @@
+.historicalCardSection {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.historicalCardSection .grid-container {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+/* 2nd row */
+.grid-container > .grid-item:nth-child(7) {
+  grid-column: span 3;
+}
+.grid-container > .grid-item:nth-child(8) {
+  grid-column: span 3;
+}
+/* 3rd row*/
+.grid-container > .grid-item:nth-child(9) {
+  grid-column: span 3;
+}
+.grid-container > .grid-item:nth-child(10) {
+  grid-column: span 3;
+}
+.grid-item {
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+/*  */
+
+.grid-item .cardItem {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.grid-item .cardItem .p {
+  font-size: 14px;
+  white-space: nowrap;
+}
+.grid-item .cardItem h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #094546;
+  white-space: nowrap;
+}
+
+.cardItem .iconCard {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(0, 150, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*  */
+
+/*  */
+.historicalCardSection .grid-container .pageTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(235, 236, 240);
+}
+.historicalCardSection .grid-container .pageTitle h2 {
+  font-size: 20px;
+}
+/*  */
+
+/* number-of-trades  Start*/
+
+.number-of-trades {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.number-of-trades-options-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+@media (max-width: 550px) {
+  .number-of-trades-options-section {
+    flex-direction: column;
+  }
+}
+
+/* number-of-trades  End*/
+
+/* balance-of-trades  Start*/
+
+.balance-of-trades {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* balance-of-trades  End*/
+/* balance-of-trade-raw-data  Start*/
+
+.balance-of-trade-raw-data {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.balance-of-trade-raw-data button {
+  all: unset;
+  color: #0096eb;
+  background-color: transparent;
+  border: 1px solid #0096eb;
+  border-radius: 7px;
+  padding: 4px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: Arial;
+}
+
+/* balance-of-trade-raw-data  End*/
+/* top_10_countries_with_trades Start*/
+.top_10_countries_with_trades {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top_10_countries_with_trades .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.top_10_countries_with_trades .button {
+  min-width: 115px;
+  padding: 5px 12px;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color 0.3s, background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  align-items: center;
+}
+
+.top_10_countries_with_trades .button:hover {
+  border-color: gray;
+}
+
+.top_10_countries_with_trades .button.selected {
+  border-color: #007bff; /* Blue border */
+  color: #007bff;
+}
+
+.button-icon{
+  display: none;
+}
+
+.button.selected .button-icon{
+  display: block;
+}
+/* top_10_countries_with_trades End*/
+
+@media (max-width: 1200px) {
+  .historicalCardSection .grid-container {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  /* 2nd row */
+  .grid-container > .grid-item:nth-child(7) {
+    grid-column: span 3;
+  }
+  .grid-container > .grid-item:nth-child(8) {
+    grid-column: span 3;
+  }
+  /* 3rd row*/
+  .grid-container > .grid-item:nth-child(9) {
+    grid-column: span 3;
+  }
+  .grid-container > .grid-item:nth-child(10) {
+    grid-column: span 3;
+  }
+}
+@media (max-width: 800px) {
+  .historicalCardSection .grid-container {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: repeat(7, auto);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  /* 2nd row */
+  .grid-container > .grid-item:nth-child(7) {
+    grid-column: span 2;
+  }
+  .grid-container > .grid-item:nth-child(8) {
+    grid-column: span 2;
+  }
+  /* 3rd row*/
+  .grid-container > .grid-item:nth-child(9) {
+    grid-column: span 2;
+  }
+  .grid-container > .grid-item:nth-child(10) {
+    grid-column: span 2;
+  }
+}

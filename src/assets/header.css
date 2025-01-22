@@ -1,0 +1,83 @@
+.headerSection {
+  width: 100%;
+  background-color: #212529;
+  color: white;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.headerItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 7px 0;
+}
+
+.headerLogo img {
+  width: 40px;
+  height: 40px;
+}
+
+.headerLogo h2 {
+  font-size: 20px;
+}
+
+.headerItems nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.headerItems nav .menu {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 1.35rem;
+  cursor: pointer;
+}
+
+.headerItems nav .menu span {
+  height: 0.15rem;
+  width: 100%;
+  background-color: white;
+}
+
+@media (max-width: 990px) {
+  .headerItems {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .headerItems nav .menu {
+    display: flex;
+  }
+
+  .headerItems nav ul {
+    display: none;
+  }
+  .headerItems nav ul.open {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    animation: showNav 0.3s ease-out;
+  }
+  @keyframes showNav {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

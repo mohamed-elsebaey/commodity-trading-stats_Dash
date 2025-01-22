@@ -1,0 +1,19 @@
+.geospatial-card-section{
+    margin: 25px 0px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding-bottom: 30px;
+}
+
+.geospatial-card-section .pageTitle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid rgb(235, 236, 240);
+}
+.geospatial-card-section .pageTitle h2{
+    color: #094546;
+    font-size: 20px;
+}
