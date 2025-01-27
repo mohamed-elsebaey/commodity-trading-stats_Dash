@@ -1,5 +1,14 @@
 import dash
-from dash import html, dcc, Output, Input, State, clientside_callback
+from dash import (
+    html,
+    dcc,
+    Output,
+    Input,
+    State,
+    clientside_callback,
+    callback,
+    no_update,
+)
 
 
 def Header():
@@ -9,6 +18,7 @@ def Header():
     return html.Section(
         className="headerSection",
         children=[
+                    dcc.Location(id="url", refresh=False),
             html.Div(
                 className="headerItems container",
                 children=[
@@ -40,6 +50,8 @@ def Header():
                                             dcc.Link(
                                                 href=page["relative_path"],
                                                 children=f"{page['name']}",
+                                                id={"type": "nav-link", "index": page["name"]},
+                                                className="nav-link"
                                             )
                                         ]
                                     )
@@ -53,6 +65,20 @@ def Header():
         ],
     )
 
+
+
+clientside_callback(
+    """
+    function(pathname, linksHref) {
+        return linksHref.map(href => {
+            return href === pathname ? 'nav-link active' : 'nav-link'
+        })
+    }
+    """,
+    Output({"type": "nav-link", "index": dash.ALL}, "className"),
+    Input("url", "pathname"),
+    State({"type": "nav-link", "index": dash.ALL}, "href"),
+)
 
 clientside_callback(
     """
